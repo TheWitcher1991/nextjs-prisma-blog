@@ -15,7 +15,7 @@ export default async function handler(req: NextApiHandler, res: NextApiResponse)
 
 const getArticle = async (req, res) => {
     try {
-        const result = await prisma.articles.findMany()
+        const result = await prisma.articles.findMany
         return res.status(200).json(result)
     } catch (e) {
         return res.status(500).json(e.message)
@@ -61,7 +61,7 @@ const deleteArticles = async (req, res) => {
     try {
         const { id } = req.body
         
-        const result = await prisma.user.delete({
+        const result = await prisma.articles.delete({
             where: {
                 id: parseInt(id)
             }
