@@ -10,10 +10,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Article { 
-    id        Int     @id @default(autoincrement())
-    title     String  @db.VarChar(255)
-    date      String  @db.VarChar(255)
-    img       String  @db.VarChar(255)
-    text      String?
+model Articles {
+  id        Int     @id @default(autoincrement())
+  title     String  @db.VarChar(255)
+  img       String  @db.VarChar(255)
+  date      String  @db.VarChar(255)
+  content   String?
 }
