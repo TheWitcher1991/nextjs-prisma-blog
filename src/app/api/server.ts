@@ -1,21 +1,32 @@
-import { NextApiHandler, NextApiResponse } from 'next'
+import * as React from 'react';
+import { NextApiRequest, NextApiResponse } from 'next'
 
-import { prisma } from '@/config/db'
+import { prisma, Prisma } from '@/config/db'
 
-export default async function handler(req: NextApiHandler, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     
     switch (req.method) {
         case '[METHOD].[MODULE]':
-            return 'HANDLER'
+            return
         default:
             return res.status(500).json('page not found')
     }
     
 }
 
+/*main()
+    .then(async () => {
+        await prisma.$disconnect()
+    })
+    .catch(async (e) => {
+        console.error(e)
+        await prisma.$disconnect()
+        process.exit(1)
+    })*/
+
 const getArticle = async (req, res) => {
     try {
-        const result = await prisma.articles.findMany
+        const result = await prisma.articles.findMany()
         return res.status(200).json(result)
     } catch (e) {
         return res.status(500).json(e.message)

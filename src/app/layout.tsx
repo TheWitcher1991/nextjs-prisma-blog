@@ -17,14 +17,18 @@ interface Props {
 
 export default function RootLayout({ children } : Props): JSX.Element {
     return (
-        <html lang="ru">
+        <html itemScope itemType="https://schema.org/WebPage" lang="ru" dir="ltr" prefix="og: https://ogp.me/ns#">
         <head>
-            <title>Blog NEXT.js</title>
+            <title itemScope="name">Blog NEXT.js</title>
+            <meta charSet="UTF-8" />
+            <meta name="viewport' content='width=device-width, initial-scale=1, viewport-fit=cover" />
+            <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+            <meta httpEquiv="x-dns-prefetch-control" content="on" />
         </head>
         <body className={inter.className}>
             <Header title='TheWitcher1991' />
             {children}
-            <Footer />
+            <Footer title='TheWitcher1991' />
         </body>
         </html>
     )
