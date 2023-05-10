@@ -1,3 +1,4 @@
+
 declare class AnyNull extends NullTypesEnumValue {
 }
 

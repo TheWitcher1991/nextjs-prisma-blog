@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faFingerprint } from '@fortawesome/free-solid-svg-icons'
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 import { header } from '@/utils/routes'
 import css from '../styles/header.module.css'
@@ -15,7 +16,8 @@ interface Props {
 
 export default function Header ({ title } : Props): JSX.Element {
     const pathname = usePathname()
-    
+    const { data: session } = useSession()
+
     return (
         <header className={css.header}>
             <section className={css.headerContainer}>
@@ -58,8 +60,16 @@ export default function Header ({ title } : Props): JSX.Element {
                         </ul>
                     </div>
                     <div className={css.headerRight}>
-                        <Link className={css.headerBth} href='/user/login'>Войти</Link>
-                        <Link className={css.headerBthActive} href='/user/register'>Регистрация</Link>
+
+                        {session?.user ? (
+                            <>
+                            </>
+                        ) : (
+                            <>
+                                <Link className={css.headerBth} href='/auth/login'>Войти</Link>
+                                <Link className={css.headerBthActive} href='/auth/register'>Регистрация</Link>
+                            </>
+                        )}
                     </div>
                 </nav>
             </section>

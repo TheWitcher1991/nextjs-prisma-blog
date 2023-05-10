@@ -1,4 +1,5 @@
 
+
 Object.defineProperty(exports, "__esModule", { value: true });
 
 const {
@@ -91,7 +92,8 @@ exports.Prisma.ArticlesScalarFieldEnum = {
   title: 'title',
   img: 'img',
   date: 'date',
-  text: 'text'
+  text: 'text',
+  user_id: 'user_id'
 };
 
 exports.Prisma.SortOrder = {
@@ -106,9 +108,17 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.UserScalarFieldEnum = {
+  id: 'id',
+  email: 'email',
+  password: 'password',
+  name: 'name'
+};
+
 
 exports.Prisma.ModelName = {
-  articles: 'articles'
+  articles: 'articles',
+  user: 'user'
 };
 
 /**

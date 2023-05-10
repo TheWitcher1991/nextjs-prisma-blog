@@ -49,3 +49,32 @@
     color: #666;
     border-radius: 2px;
 }
+
+.footerUl {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footerH1 {
+    color: #000000;
+    margin: 0 0 20px 0;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.footerA {
+    margin-top: 0;
+    line-height: 20px;
+    font-size: 13px;
+    display: block;
+    color: #666;
+    font-weight: 400;
+    margin-bottom: 12px;
+    transition: all 0.2s linear;
+}
+
+.footerA:hover {
+    color: #111;
+}

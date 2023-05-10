@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from 'react'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { prisma, Prisma } from '@/config/db'
+import { prisma, Prisma } from '@/lib/prisma'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     
@@ -53,10 +53,10 @@ const getArticles = async (req, res) => {
 
 const createArticles = async (req, res) => {
     try {
-        const { title, text, img, date } = req.body
+        const { title, text, img, date, user_id } = req.body
         
         const result = await prisma.articles.create({
-            data: { title, text, img, date },
+            data: { title, text, img, date, user_id },
             select: {
                 id: true
             }

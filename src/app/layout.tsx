@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 
 import Header from '../componets/Header'
 import Footer from '../componets/Footer'
+import Provider from './provider'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import '../styles/globals.css'
 
@@ -26,9 +27,11 @@ export default function RootLayout({ children } : Props): JSX.Element {
             <meta httpEquiv="x-dns-prefetch-control" content="on" />
         </head>
         <body className={inter.className}>
-            <Header title='TheWitcher1991' />
-            {children}
-            <Footer title='TheWitcher1991' />
+            <Provider>
+                <Header title='TheWitcher1991' />
+                {children}
+                <Footer title='TheWitcher1991' />
+            </Provider>
         </body>
         </html>
     )

@@ -27,12 +27,12 @@ export default function Footer ({ title } : Props): JSX.Element {
 
                     {footer.map(({ id, title, list }) => (
                         <div key={id}>
-                            <span>{title}</span>
+                            <span className={css.footerH1}>{title}</span>
 
-                            <ul>
+                            <ul className={css.footerUl}>
                                 {list.map(({ id, title, path }) => (
                                     <li key={id}>
-                                        <Link href={path}>{title}</Link>
+                                        <Link className={css.footerA} href={path}>{title}</Link>
                                     </li>
                                 ))} 
                             </ul>
