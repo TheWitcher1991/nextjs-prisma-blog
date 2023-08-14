@@ -1,0 +1,154 @@
+.meHead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 60px 0 60px 0;
+    width: 100%;
+    background: #fafafa;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.meName {
+    color: #666;
+    font-weight: 400;
+    margin: 16px 0 12px 0;
+    display: block;
+    font-size: 15px;
+}
+
+.meTitle {
+    background: linear-gradient(180deg,#555,#000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+    width: 430px;
+}
+
+.ctxTitle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    margin: 30px 0;
+}
+
+.ctxSpan {
+    display: block;
+    background-image: linear-gradient(90deg,#007cf0,#00dfd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 16px 0 0 0;
+}
+
+.ctxNum {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border-radius: 100%;
+    color: #fff;
+    background: linear-gradient(90deg,#007cf0,#00dfd8);
+}
+
+.ctxLine {
+    height: 100px;
+    width: 1px;
+    background: linear-gradient(#fff,#019ae9);
+}
+
+.homePort {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 0 200px 0;
+}
+
+.homePortL {
+    display: inline-flex;
+    flex: 1;
+}
+
+.homePortR {
+    width: 500px;
+    margin: 55px 0 0 0;
+}
+
+.ctxBlock {
+    margin: 0 0 36px 0;
+}
+
+.ctxBlockIcon {
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    margin: 0 0 16px 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: #666;
+}
+
+.ctxBlockH1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+    margin: 0 0 8px 0;
+}
+
+.ctxBlockText {
+    color: #666;
+    line-height: 28px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.ctxImg1, .ctxImg2, .ctxImg3 {
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.12);
+    transition: all 0.2s linear;
+}
+
+.ctxImg1 {
+    top: 0;
+    left: 150px;
+    transform: rotate(-4deg);
+}
+
+.ctxImg2 {
+    top: 30px;
+    left: 310px;
+    transform: rotate(-2deg);
+}
+
+.ctxImg3 {
+    top: 60px;
+    left: 510px;
+    transform: rotate(0deg);
+
+}
+
+.homePortL:hover > .ctxImg1 {
+    transform: rotate(-6deg) scale(1.03) translateX(calc(-1.5em * 1.5)) translateY(calc(-0.25em * 1.5));
+}
+
+.homePortL:hover > .ctxImg2 {
+    transform: rotate(-4deg) scale(1.03) translateX(-1.5em) translateY(-0.25em);
+}
+
+.homePortL:hover > .ctxImg3 {
+    transform: rotate(2deg) scale(1.03);
+}
+

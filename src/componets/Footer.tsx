@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFingerprint } from "@fortawesome/free-solid-svg-icons";
 
-import { footer } from '@/utils/routes'
+import { footer } from '@/web/routes'
 import css from '../styles/footer.module.css'
 
 interface Props {

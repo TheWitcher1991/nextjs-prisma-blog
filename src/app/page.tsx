@@ -1,95 +1,97 @@
 import Image from 'next/image'
 import styles from '../styles/page.module.css'
+import layout from '../styles/layout.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faServer, faTerminal, faWrench, faHtml5 } from '@fortawesome/free-solid-svg-icons'
+import * as React from 'react'
 
 export default function IndexPage() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+      <div>
+          <div className={layout.meHead}>
+              <Image
+                  src={require('../../public/img/img.jpg')}
+                  width={150}
+                  height={150}
+                  alt="Picture of the author"
+                  style={{borderRadius: 500,objectFit: 'cover'}}
+              />
+              <span className={layout.meName}>Hi, I'm TheWitcher1991</span>
+              <h1 className={layout.meTitle}>Building digital product, brands, and experience</h1>
+
+          </div>
+
+          <div className={styles.container}>
+
+              <div className={layout.ctxTitle}>
+                  <span className={layout.ctxLine}></span>
+                  <div className={layout.ctxNum}>1</div>
+                  <span className={layout.ctxSpan}>Мои разработки</span>
+              </div>
+
+              <div className={layout.homePort}>
+                  <div className={layout.homePortL}>
+                      <Image
+                          src={require('../../public/img/portfolio/1.png')}
+                          width={260}
+                          height={570}
+                          className={layout.ctxImg1}
+                      />
+                      <Image
+                          src={require('../../public/img/portfolio/2.png')}
+                          width={260}
+                          height={570}
+                          className={layout.ctxImg2}
+                      />
+                      <Image
+                          src={require('../../public/img/portfolio/3.png')}
+                          width={260}
+                          height={570}
+                          className={layout.ctxImg3}
+                      />
+
+                  </div>
+
+                  <div className={layout.homePortR}>
+                      <div className={layout.ctxBlock}>
+                              <span className={layout.ctxBlockIcon}>
+                                   <FontAwesomeIcon
+                                       icon={faWrench}
+                                   />
+                              </span>
+                          <div className={layout.ctxBlockH1}>
+                              The complete toolkit for the Web
+                          </div>
+                          <div className={layout.ctxBlockText}>Everything you need to build your site exactly how you imagine, from automatic API handling to built-in image and performance optimizations.</div>
+                      </div>
+                      <div className={layout.ctxBlock}>
+                              <span className={layout.ctxBlockIcon}>
+                                   <FontAwesomeIcon
+                                       icon={faServer}
+                                   />
+                              </span>
+                          <div className={layout.ctxBlockH1}>
+                              Easy integration with your backend
+                          </div>
+                          <div className={layout.ctxBlockText}>Connect your pages to any data source, headless CMS, or API and make it work in everyone’s dev environment.</div>
+                      </div>
+                      <div className={layout.ctxBlock}>
+                              <span className={layout.ctxBlockIcon}>
+                                   <FontAwesomeIcon
+                                       icon={faTerminal}
+                                   />
+                              </span>
+                          <div className={layout.ctxBlockH1}>
+                              End-to-end testing on Localhost
+                          </div>
+                          <div className={layout.ctxBlockText}>From caching to Serverless Functions, all our cloud primitives work perfectly on localhost.</div>
+                      </div>
+                  </div>
+              </div>
+
+
+
+          </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
   )
 }

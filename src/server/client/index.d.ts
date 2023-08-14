@@ -143,9 +143,9 @@ export class PrismaClient<
    * @example
    * ```
    * const [george, bob, alice] = await prisma.$transaction([
-   *   prisma.user.create({ data: { name: 'George' } }),
-   *   prisma.user.create({ data: { name: 'Bob' } }),
-   *   prisma.user.create({ data: { name: 'Alice' } }),
+   *   prisma.user.signUp({ data: { name: 'George' } }),
+   *   prisma.user.signUp({ data: { name: 'Bob' } }),
+   *   prisma.user.signUp({ data: { name: 'Alice' } }),
    * ])
    * ```
    * 
@@ -263,7 +263,7 @@ export namespace Prisma {
 
   /**
    * Matches any valid value that can be used as an input for operations like
-   * create and update as the value of a JSON field. Unlike `JsonValue`, this
+   * signUp and update as the value of a JSON field. Unlike `JsonValue`, this
    * type allows read-only arrays and read-only object properties and disallows
    * `null` at the top level.
    *
@@ -1134,12 +1134,12 @@ export namespace Prisma {
 
     /**
      * Create a Articles.
-     * @param {articlesCreateArgs} args - Arguments to create a Articles.
+     * @param {articlesCreateArgs} args - Arguments to signUp a Articles.
      * @example
      * // Create one Articles
-     * const Articles = await prisma.articles.create({
+     * const Articles = await prisma.articles.signUp({
      *   data: {
-     *     // ... data to create a Articles
+     *     // ... data to signUp a Articles
      *   }
      * })
      * 
@@ -1150,7 +1150,7 @@ export namespace Prisma {
 
     /**
      * Create many Articles.
-     *     @param {articlesCreateManyArgs} args - Arguments to create many Articles.
+     *     @param {articlesCreateManyArgs} args - Arguments to signUp many Articles.
      *     @example
      *     // Create many Articles
      *     const articles = await prisma.articles.createMany({
@@ -1238,12 +1238,12 @@ export namespace Prisma {
 
     /**
      * Create or update one Articles.
-     * @param {articlesUpsertArgs} args - Arguments to update or create a Articles.
+     * @param {articlesUpsertArgs} args - Arguments to update or signUp a Articles.
      * @example
-     * // Update or create a Articles
+     * // Update or signUp a Articles
      * const articles = await prisma.articles.upsert({
-     *   create: {
-     *     // ... data to create a Articles
+     *   signUp: {
+     *     // ... data to signUp a Articles
      *   },
      *   update: {
      *     // ... in case it already exists, update
@@ -1617,7 +1617,7 @@ export namespace Prisma {
 
 
   /**
-   * articles create
+   * articles signUp
    */
   export type articlesCreateArgs = {
     /**
@@ -1625,7 +1625,7 @@ export namespace Prisma {
      */
     select?: articlesSelect | null
     /**
-     * The data needed to create a articles.
+     * The data needed to signUp a articles.
      */
     data: XOR<articlesCreateInput, articlesUncheckedCreateInput>
   }
@@ -1636,7 +1636,7 @@ export namespace Prisma {
    */
   export type articlesCreateManyArgs = {
     /**
-     * The data used to create many articles.
+     * The data used to signUp many articles.
      */
     data: Enumerable<articlesCreateManyInput>
     skipDuplicates?: boolean
@@ -1690,7 +1690,7 @@ export namespace Prisma {
      */
     where: articlesWhereUniqueInput
     /**
-     * In case the articles found by the `where` argument doesn't exist, create a new articles with this data.
+     * In case the articles found by the `where` argument doesn't exist, signUp a new articles with this data.
      */
     create: XOR<articlesCreateInput, articlesUncheckedCreateInput>
     /**
@@ -2042,12 +2042,12 @@ export namespace Prisma {
 
     /**
      * Create a User.
-     * @param {userCreateArgs} args - Arguments to create a User.
+     * @param {userCreateArgs} args - Arguments to signUp a User.
      * @example
      * // Create one User
-     * const User = await prisma.user.create({
+     * const User = await prisma.user.signUp({
      *   data: {
-     *     // ... data to create a User
+     *     // ... data to signUp a User
      *   }
      * })
      * 
@@ -2058,7 +2058,7 @@ export namespace Prisma {
 
     /**
      * Create many Users.
-     *     @param {userCreateManyArgs} args - Arguments to create many Users.
+     *     @param {userCreateManyArgs} args - Arguments to signUp many Users.
      *     @example
      *     // Create many Users
      *     const user = await prisma.user.createMany({
@@ -2146,12 +2146,12 @@ export namespace Prisma {
 
     /**
      * Create or update one User.
-     * @param {userUpsertArgs} args - Arguments to update or create a User.
+     * @param {userUpsertArgs} args - Arguments to update or signUp a User.
      * @example
-     * // Update or create a User
+     * // Update or signUp a User
      * const user = await prisma.user.upsert({
-     *   create: {
-     *     // ... data to create a User
+     *   signUp: {
+     *     // ... data to signUp a User
      *   },
      *   update: {
      *     // ... in case it already exists, update
@@ -2525,7 +2525,7 @@ export namespace Prisma {
 
 
   /**
-   * user create
+   * user signUp
    */
   export type userCreateArgs = {
     /**
@@ -2533,7 +2533,7 @@ export namespace Prisma {
      */
     select?: userSelect | null
     /**
-     * The data needed to create a user.
+     * The data needed to signUp a user.
      */
     data: XOR<userCreateInput, userUncheckedCreateInput>
   }
@@ -2544,7 +2544,7 @@ export namespace Prisma {
    */
   export type userCreateManyArgs = {
     /**
-     * The data used to create many users.
+     * The data used to signUp many users.
      */
     data: Enumerable<userCreateManyInput>
     skipDuplicates?: boolean
@@ -2598,7 +2598,7 @@ export namespace Prisma {
      */
     where: userWhereUniqueInput
     /**
-     * In case the user found by the `where` argument doesn't exist, create a new user with this data.
+     * In case the user found by the `where` argument doesn't exist, signUp a new user with this data.
      */
     create: XOR<userCreateInput, userUncheckedCreateInput>
     /**

@@ -7,6 +7,7 @@ import Footer from '../componets/Footer'
 import Provider from './provider'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import '../styles/globals.css'
+import styles from '../styles/page.module.css'
 
 config.autoAddCss = false
 
@@ -29,7 +30,9 @@ export default function RootLayout({ children } : Props): JSX.Element {
         <body className={inter.className}>
             <Provider>
                 <Header title='TheWitcher1991' />
-                {children}
+                <main className={styles.main}>
+                    {children}
+                </main>
                 <Footer title='TheWitcher1991' />
             </Provider>
         </body>

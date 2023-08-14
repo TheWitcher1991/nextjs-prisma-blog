@@ -8,18 +8,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model articles {
-  id      Int     @id @default(autoincrement())
+model Post {
+  id      Int     @id               @default(autoincrement())
   title   String  @db.VarChar(255)
   img     String  @db.VarChar(255)
   date    String  @db.VarChar(255)
+  role    String  @db.VarChar(255)  @default("user")
   text    String? @db.Text
-  user_id Int
+  userId  Int
+  user    User    @relation(fields: [userId], references: [id])
 }
 
-model user {
-  id       Int     @id @default(autoincrement())
-  email    String  @unique(map: "User_email_key")
+model User {
+  id       Int     @id              @default(autoincrement())
+  email    String  @unique()
   password String  @db.VarChar(255)
-  name     String?
+  name     String  @db.VarChar(255)
+  posts    Post[]
 }

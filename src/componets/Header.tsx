@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faFingerprint } from '@fortawesome/free-solid-svg-icons'
 import { signIn, signOut, useSession } from 'next-auth/react'
 
-import { header } from '@/utils/routes'
+import { header } from '@/web/routes'
 import css from '../styles/header.module.css'
 
 interface Props {
@@ -56,20 +56,27 @@ export default function Header ({ title } : Props): JSX.Element {
                                     )}
                                 </li>
                             ))}
-                  
+
                         </ul>
                     </div>
                     <div className={css.headerRight}>
 
                         {session?.user ? (
                             <>
+                                <button className={css.headerBth} onClick={() => signOut()}>Выйти</button>
                             </>
                         ) : (
                             <>
-                                <Link className={css.headerBth} href='/auth/login'>Войти</Link>
-                                <Link className={css.headerBthActive} href='/auth/register'>Регистрация</Link>
+                                {pathname !== '/auth/signIn' ? (
+                                    <button className={css.headerBth} onClick={() => signIn()}>Войти</button>
+                                ) : null}
+
+                                {pathname !== '/auth/signUp' ? (
+                                    <Link className={css.headerBthActive} href='/auth/signUp'>Регистрация</Link>
+                                ) : null}
                             </>
                         )}
+
                     </div>
                 </nav>
             </section>

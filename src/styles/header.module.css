@@ -98,6 +98,9 @@
     font-size: 13px;
     color: #666;
     transition: all 0.2s linear;
+    background: transparent;
+    border: 0;
+    font-family: var(--font-mono);
 }
 
 .headerBth:hover {
